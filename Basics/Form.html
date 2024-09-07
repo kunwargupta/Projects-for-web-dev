@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="shortcut icon" href="/HTML/1668234839753.jpg" type="image/x-icon">
+    <style>
+        img {
+            float: left;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h3 id="log">JIC Student Form</h3>
+    <img src="/HTML/1668234839753.jpg" alt="It's me" height="100px">
+    <form action="/HTML/Project1/.php">
+        <label for="Name">Name:
+            <input type="text" placeholder="Enter your name" id="Name">
+        </label>
+        <br>
+        <br>
+        <label for="Password">
+            Password: 
+            <input type="password" placeholder="Enter your password" id="Password">
+        </label>
+        <br>
+        <br>
+        Gender:
+        <label for="Male">
+            <input type="radio" id="Male" name="Gender" value="Male">Male
+        </label>
+        <label for="Female">
+            <input type="radio" id="Female" name="Gender" value="Female">Female
+        </label>
+        <label for="Other">
+            <input type="radio" id="Other" name="Gender" value="Other">Other
+        </label>
+        <br>
+        <br>
+        Class:
+        <label for="X">
+            <input type="radio" id="X" name="Class" value="X">X
+        </label>
+        <label for="XII">
+            <input type="radio" id="XII" name="Class" value="XII">XII
+        </label>
+        <label for="Graduation">
+            <input type="radio" id="Graduation" name="Class" value="Graduation">Graduation
+        </label>
+        <br>
+        <br>
+        
+        City:
+        <select name="City" id="City">
+            <option value="Delhi">Delhi</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Agra">Agra</option>
+            <option value="Pune">Pune</option>
+            <option value="Noida">Noida</option>
+            <option value="Lucknow">Lucknow</option>
+        </select>
+        <br>
+        <br>
+        <textarea name="Feedback" id="Feedback" placeholder="Give your valuable feedback" rows="" spellcheck="true" style="scroll-behavior: auto;"></textarea>
+        <br>
+        <br>
+        <input type="reset">
+        <button>Submit</button>
+    </form>
+
+</body>
+</html>

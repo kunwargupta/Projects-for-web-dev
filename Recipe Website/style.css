@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: "Poppins", sans-serif;
+    height: 100%;
+    width: 100%;
+}
+
+header {
+    
+    background-color: white; /* Dark gray background */
+    height: 60px;
+    width: 100%;
+    color: black; /* Change text color to white for better visibility */
+    box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto ;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;    
+}
+
+
+.logo {
+    display: flex;
+    color: gold;
+    text-shadow: #FC0 1px 0 10px;
+    -webkit-text-stroke: 0.5px black; /* Text border */
+    margin-top: 10px;
+    margin-left: 20px;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.nav_list {
+    display: block;
+}
+nav ul {
+    text-decoration: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline;
+    margin: 10px ;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    transform: scale(1.1);
+    color: gold;
+}
+
+nav ul li a::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+    position: absolute;
+    background-color: gold;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+.icons {
+    display: flex;
+    margin-top: 10px;
+    margin-left: 20px;
+    gap: 15px;
+    color: black;
+}
+
+.icons i {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.icons i:hover {
+    transform: scale(1.2);
+    color: gold;
+}
+
+.nav_list {
+
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-left: 600px;
+}
+
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70vh; /* Full viewport height */
+    background: url(top-view-vegetables-as-green-mint-leaves-basil-tomato-around-empty-tray-green.jpg) no-repeat center center;
+    background-size: cover; /* Cover the entire container */
+    margin-bottom: 20px;
+}
+
+.search_box {
+    display: flex;
+    max-width: 550px;
+    justify-content: center;
+    align-items: center;
+    margin: 15px auto;
+    /* margin-top: 10px; */
+}
+
+ /* p {
+    display: flex;
+    margin-right: 100px; */
+/* } */
+
+.hero h2 {
+    color: white;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: white;
+    font-size: 20px;
+    margin-left: 100px;
+    margin-bottom: 10px;
+}
+
+.search_box input {
+    width: 70%;
+    padding: 10px;
+    outline: none;
+    border: 0;
+    border-radius: 5px 0 0 5px;
+    font-size: 1rem;
+
+}
+
+.search_box button {
+    width: 10%;
+    padding: 10px;
+    margin-left: 10px;
+    outline: none;
+    border: 0;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.search_box button:hover {
+    transform: scale(1.1);
+    background-color: gold
+} 
+
+.recipies {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 0;
+}
+
+.recipe_section {
+    margin: 0 auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 30px;
+}
+
+.recipe_card {
+    background-color: #f7f7f7;
+    margin: auto;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    height: auto;
+    width: 50%;  /* Reduced width of the cards */
+    text-align: center;
+}
+
+.recipe_card img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.recipe_card h2 {
+    font-size: 20px;  /* Reduced font size */
+    padding: 15px;    /* Reduced padding */
+}
+
+.recipe_card p {
+    font-size: 16px;  /* Reduced font size */
+    padding: 15px;    /* Reduced padding */
+}
+
+.recipe_card a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background-color: gold;
+    color: black;
+    padding: 12px 0;  /* Reduced padding */
+}
+
+
+.recipies h1 {
+    display: flex;
+    background-color: gold;
+    justify-content: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+
+footer {
+    background: gold;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.menu_icon {
+    text-align: right;
+    padding: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    display: block;
+}
+
+@media only screen and (min-width: 768px) {
+    .menu_icon {
+        display: none;
+    }
+
+    /* .nav_list {
+        display: block;
+    } */
+}
+@media only screen and (max-width: 768px) {
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .hero p{
+        font-size: 15px;
+    }
+}
+
+#pasta h2 {
+    margin-top: 10px;
+}
+#pasta img {
+    height: 210px;
+    object-fit: cover;
+}

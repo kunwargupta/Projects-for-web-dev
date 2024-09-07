@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Website</title>
+    <link rel="shortcut icon" href="Sheryians_logo_EzwgcppnD.webp" type="image/x-icon">
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items:start;
+            padding: 20px;
+        }
+
+        .left {
+            display: flex;
+            flex-direction: column;
+            max-width: 60%; /* Adjust as needed */
+        }
+
+        .text1, .text2 {
+            font-size: 20px;
+            padding: 5px;
+            margin-bottom: 10px; /* Space between the text boxes */
+            border: 1px solid black;
+        }
+
+        .text1 {
+            background: beige;
+        }
+
+        .text2 {
+            background: pink;
+        }
+
+        .right img {
+            max-width: 100vw; /* Ensure the image is responsive */
+            height: auto;
+        }
+
+        @media (max-width: 640px) {
+            .left {
+                max-width: 100%;
+            }
+
+            .container {
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .right img {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="text1">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam obcaecati dignissimos minima aut consequatur voluptates a, quia hic sit?</p>
+            </div>
+            <div class="text2">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas distinctio in dolorem suscipit iusto cupiditate dolores, nihil explicabo ipsam delectus?</p>
+            </div>
+        </div>
+        <div class="right">
+            <img src="Sheryians_logo_EzwgcppnD.webp" alt="Logo">
+        </div>
+    </div>
+</body>
+</html>

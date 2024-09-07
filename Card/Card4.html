@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+
+        html, body {
+                    height : 100%; 
+                    width: 100%
+                    
+        }
+
+        .container {
+            background-color:rgb(35, 53, 74);
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+                     justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            display: flex;
+            overflow: hidden;
+            background-color: rgb(50, 7, 50);
+            height: 500px;
+            width: 900px;
+        }
+
+        .left_card h2, h4, p{
+            color: white;
+        }
+
+        .left_card {
+            padding: 50px;
+            position: relative;
+        }
+
+        .left_card #main_heading{
+            position: relative;
+            top: 60px;
+            margin-bottom: 120px;
+            font-size: xx-large;
+        }
+
+        .left_card #caption {
+            margin-bottom: 50px;
+            font-weight: lighter;
+
+        }
+
+        .right_card img {
+            /* display: flex;
+            justify-content: flex-end; */
+            width: 30vw;
+            height: 71vh;
+        }
+
+        .social {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="left_card">
+                <h2 id="main_heading">Get insights that help your business grow</h2>
+                <h4 id="caption">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit reprehenderit delectus ullam sint repudiandae totam! Nesciunt possimus consequuntur inventore similique?</h4>
+                <div class="social">
+                    <div class="comments">
+                        <h2>10k+</h2>
+                        <p>Comments</p>
+                    </div>
+                    <div class="users">
+                        <h2>214</h2>
+                        <p>Paid Users</p>
+                    </div>
+                    <div class="views">
+                        <h2>12M+</h2>
+                        <p>Views</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right_card">
+                <img src="Designer.png" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

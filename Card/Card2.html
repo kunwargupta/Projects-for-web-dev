@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qr code Card2</title>
+    <link rel="stylesheet" href="Style_card2.css">
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background-color: #0093E9;
+            background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            width: 250px;
+            height: 380px;
+            background-color: white;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card img {
+            position: relative;
+            margin-bottom: 10px;
+            top: 30px;
+            height: 40%;
+            border-radius: 10px;
+            transform: scale(1.5);
+            transform-origin: center center;
+            object-fit: cover;
+        }
+
+        .card h2 {
+            font-weight: bold;
+            font-size: 1.0rem;
+            position: relative;
+            top: 80px;
+        }
+
+        .card p {
+            font-size: 1rem;
+            position: relative;
+            top: 90px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <img src="2587549c-daf0-41a7-82a2-28098b26f03f.webp" alt="">
+            <h2>Improve your frontend skills by building projects</h2>
+            <p>Scan the qr code to visit the mentor and take your coding skills to the next level<p>
+        </div>
+    </div>
+</body>
+</html>

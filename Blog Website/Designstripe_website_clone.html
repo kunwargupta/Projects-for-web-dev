@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clone Blog Website #1</title>
+    <!-- font-family: "Hanken Grotesk", sans-serif; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<!-- font-family: "Montserrat", sans-serif; -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<!-- font-family: "DM Sans", sans-serif; -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<!--  font-family: "Alfa Slab One", serif; -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+
+<!--  -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Black&family=Titan+One&display=swap" rel="stylesheet">
+
+<!-- Icon Library -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
+<!------------------------------------------------------- Styling here------------------------------------------------------------------>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        /* font-size: 62.5%; */
+    }
+
+    body {
+        height: 100%;
+        width: 100%;
+    }
+
+    :root {
+        --font1: "Hanken Grotesk", sans-serif;
+        --font2: "Montserrat", sans-serif;
+        --font3: "DM Sans", sans-serif;
+        --font4: "Alfa Slab One", serif;
+        --black: rgb(30,8,37);
+    }
+
+    .container {
+        height: 100%;
+        width: 100%;
+        background-color: rgb(255, 253, 253);
+        /* padding: 97px; */
+        padding-left: 6rem;
+        padding-right: 6rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+    }
+
+    .nav {
+        width: 100%;
+        max-width: 38rem;
+        height: 4rem; /* Fixed height */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: sticky;
+        top: 1.5rem;
+        gap: 3rem;
+        padding-right: 8px;
+        padding-left: 1rem;
+        border-radius: 3rem;
+        background-color: rgb(255, 255, 255);
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        margin-bottom: 3rem;
+
+        
+    }
+
+    .nav_tags {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        position: relative;
+        left: 1rem;
+    }
+
+    .nav_tag:hover {
+        color: rgb(48,116,145);
+    }
+
+    .nav_tag {
+        text-decoration: none;
+        font-family: var(--font3);
+        color: black;
+        font-weight: 300;
+        font-size: 1rem;
+        font-style: normal;
+        padding: 0;
+    }
+
+    .nav .logo {
+        position: relative;
+        left: 1.3rem;
+        font-family: var(--font3);
+        font-weight: bolder;
+        font-style: normal;
+        font-size: 1.5rem;
+        line-height: 22px;
+        color: rgb(51, 51, 51);
+        
+    }
+
+    .go-to-app {
+        width: 125px;
+        text-decoration: none;
+        font-family: var(--font3);
+        line-height: 11px;
+        font-size: 0.7rem;
+        font-weight: 700;
+        font-style: normal;
+        color: rgb(30, 8, 37);
+        background: rgb(109, 208, 254);
+        padding: 18px;
+        /* border-bottom-left-radius: 32px;
+        border-top-right-radius: 32px; */
+        border-radius: 200px;
+        text-align: center;
+    }
+
+    .go-to-app:hover {
+        background-color: rgb(22, 183, 242);
+        transition: 0.3ms ease;
+    }
+
+    .grid1 {
+        margin-top: 2rem;
+        margin-bottom: 15rem;
+        display: grid;
+        grid-template-columns: 1.5fr 1fr; /* Adjusted from 2fr 1fr */
+        gap: 2rem;
+
+    }
+
+    .item1 {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        grid-column: 1 / 2;
+    }
+
+    .items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Gap between the items on the right side */
+    grid-column: 2 / 3; /* Position the items container in the second column */
+}
+
+    .item2, .item3, .item4, .item5 {
+        display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-bottom: 0.1rem;
+    }
+
+
+    .grid1 .banner_head {
+        /* change values into rem */
+        height: 35rem;  
+        width:  45rem;
+        border-radius: 1rem;
+    }
+
+    .grid1 .banner {
+        /* change values into rem */
+        /* height: 171px; */
+        /* height: 10rem; */
+        /* width: 190px; */
+        /* width: 12em; */
+        width: 40%;
+    height: 100%;
+        object-fit: cover;
+        /* width: 100%; */
+        border-radius: 0.8rem;
+    }
+
+    .grid1 .info {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+
+    }
+    
+    .grid1 .info .pic {
+        width: 3rem;
+        margin-right: 1rem;
+    }
+
+    .nnd1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+    .inf {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.5rem; /* Add some margin for spacing */
+}
+
+    .title {
+        width: 50%;
+        margin-left: 1rem;
+        display: flex;
+    flex-direction: column;
+    justify-content: center; /* Ensure title and details are centered vertically */
+    }
+
+     .headline1, .headline, .info, .inf, .catgs, .title{
+        font-family: var(--font2);
+    }
+
+    .headline1, .headline, .info, .inf{
+        font-family: var(--font2);
+        color: var(--black);
+    }
+
+    .headline1 {
+        font-weight:bolder;
+        color: rgb(30, 8, 37);
+        font-size: 30px;
+    }
+
+    .headline {
+        font-weight: bolder;
+        /* font-weight: 500; */
+        font-size: 1.28rem;
+    }
+
+    .desc {
+        font-weight: 400;
+        font-size: 16px;
+        font-family: var(--font2);
+    }
+
+    .catgs {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .catg {
+        margin-right: 1rem;
+        font-weight: 500;
+        font-size: 0.9rem;
+        color: #A47C03;
+        background-color: #FFC00040;
+        padding: 0.4rem;
+
+    }
+
+    .des {
+        font-weight: 400;
+        font-size: 14px;
+        font-family: var(--font2);
+    }
+
+    .items .inf .nnd {
+        margin: 0.5rem 0 0.5rem 0;
+        display: flex;
+        flex-direction: row;
+        font-weight: 500;
+        font-size: 12px;
+        gap: 10px;
+    }
+
+    .grid1 .date {
+        color: rgb(156, 156, 156);
+    }
+
+    .section2 h3 {
+        font-family: var(--font2);
+        color: var(--black);
+        margin-bottom: 2rem;
+
+    }
+
+    .grid2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 3fr;
+        gap: 1rem;
+
+    }
+
+    .grid2 .poster1, .poster3 {
+        grid-column: 1 / 2;
+    }
+
+    .grid2 .poster2, .poster4{
+        grid-column: 2 / 3;
+    }
+
+    .grid2 img {
+    width: 95%;
+    height: 80%;
+    border-radius: 1rem;
+    object-fit: cover; /* Ensure images fit within their containers */
+}
+
+.box1, .box2, .box3, .box4, .box5, .box6 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Ensure a gap between image and text */
+    margin-bottom: 1.5rem;
+}
+
+.grid2 .social {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    }
+
+
+    .grid2 .nnd {
+        margin: 0.5rem 0 0.5rem 0;
+        display: flex;
+        flex-direction: column;
+        font-weight: 500;
+        gap: 0.3rem;
+    }
+
+    .grid2 .Name {
+        color: var(--black);
+        font-weight: 500;
+        font-family: var(--font2);
+        font-size: 0.9rem;
+    }
+
+    .grid2 .date {
+        color: rgb(156, 156, 156);
+        font-weight: 400;
+        font-family: var(--font2);
+        font-size: 0.9rem;
+    }
+    
+
+    .grid2 .pic {
+        width: 3rem;
+    }
+
+    .grid2 .heading {
+        font-weight: bolder;
+        /* font-weight: 500; */
+        font-size: 1.28rem;
+        font-style: normal;
+        font-family: var(--font2);
+        margin-bottom: 0.1rem;
+    }
+
+    .grid2 .article {
+        width: 95%;
+        gap: 0.3rem;
+        margin-left: 1rem;
+        display: flex;
+    flex-direction: column;
+    justify-content: center; /* Ensure title and details are centered vertically */
+    }
+
+    .heading, .social, .article{
+        font-family: var(--font2);
+    }
+
+    .heading .Name{
+        font-family: var(--font2);
+        color: var(--black);
+    }
+
+    .heading {
+        font-weight:bolder;
+        color: rgb(30, 8, 37);
+        font-size: 1.5rem;
+    }
+
+    .box2, .box5 {
+        height: 100%;
+    }
+
+    .section2 {
+        margin-bottom: 10rem;
+    }
+
+    /* -------------------------------------------------------------- grid 3 ---------------------------------------------------------- */
+
+    .section3 #best {
+        font-family: var(--font2);
+        color: var(--black);
+        margin-bottom: 2rem;
+    }
+
+    .grid3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        /* padding-left: 6rem;
+        padding-right: 6rem; */
+    }
+
+    .blog1, blog4, .blog7 {
+        grid-column: 1 / 2;
+    }
+
+    .blog2, blog5, .blog8 {
+        grid-column: 2 / 3;
+    }
+
+    .blog3, blog6, .blog9 {
+        grid-column: 3 / 4;
+    }
+
+    .writer img {
+        width: 2rem;
+        height: 2rem;
+        margin-right: 1rem;
+    }
+
+    .blog {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .blog .cover {
+        height: 100%;
+        width: 100%;
+        border-radius: 1rem;
+        object-fit: cover;
+    }
+
+    .blog_title {
+        font-family: var(--font2);
+        margin-top: 1rem;
+    }
+
+    .head {
+        font-weight: 600;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .grid3 #lane {
+        font-weight: 500;
+        font-size: 0.85rem;
+        font-style: normal;
+        color: var(--black);
+        margin-bottom: 1rem;
+    }
+
+    .grid3 .writer {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .naam {
+        font-size: 0.88rem;
+        font-family: var(--font2);
+        color: var(--black);
+        font-weight: 500;
+    }
+
+    .taarikh {
+        font-size: 0.88rem;
+        font-family: var(--font2);
+        color: grey;
+        font-weight: 400;
+    }
+
+    .section3 {
+        margin-bottom: 5rem;
+    }
+
+
+    .orange_container {
+        height: 450px;
+        width: 100%;
+        background-color: rgb(255, 113, 25);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 1rem;
+        margin-bottom: 10rem;
+    }
+
+    .orange_container #main_line {
+        font-weight: bolder;
+        font-family: "Archivo Black", sans-serif;
+        /* font-size: 5rem; */
+        font-size: 500%;
+        color: white;
+        /* margin-bottom: 1rem; */
+        margin-bottom: 1%;
+    }
+
+    .orange_container #bottom_line {
+        font-weight: 450;
+        font-family: var(--font2);
+        /* font-size: 1.16rem; */
+        font-size: 115%;
+        color: white;
+        /* margin-bottom: 3rem; */
+        margin-bottom: 4%;
+    }
+
+    .orange_container button {
+        /* width: 125px; */
+        width: 10%;
+        text-decoration: none;
+        font-family: var(--font3);
+        line-height: 11px;
+        /* font-size: 0.9rem; */
+        font-size: 100%;
+        font-weight: 800;
+        font-style: normal;
+        color: rgb(30, 8, 37);
+        background: #f9d03b;
+        /* padding: 18px; */
+        padding: 2%;
+        border: #f9d03b;
+        /* border-bottom-left-radius: 32px;
+        border-top-right-radius: 32px; */
+        border-radius: 200px; 
+        text-align: center;
+    }
+
+    /* .line_breaker {
+        height: 10rem;
+        width: 10rem;
+        border: none;
+        background-color: var(--black);
+        
+    } */
+
+    .left .logo2 {
+        left: 1.3rem;
+        font-family: var(--font3);
+        font-weight: bolder;
+        font-style: normal;
+        font-size: 2rem;
+        line-height: 22px;
+        color: rgb(51, 51, 51);
+    }
+
+    footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2rem;
+    margin-bottom: 12rem;
+}
+
+footer .left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+}
+
+  footer .right {
+    display: flex;
+    justify-content: space-between;
+    gap: 5rem;
+} 
+
+footer .right li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+
+footer .right p {
+    font-family: var(--font3);
+    color: rgb(51, 51, 51);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+footer .right li ul {
+    margin-bottom: 0.5rem;
+    font-family: var(--font2);
+    color: rgb(51, 51, 51);
+    font-size: 0.95rem;
+    font-weight: 480;
+}
+
+footer .logo2 {
+    font-family: var(--font3);
+    font-weight: bolder;
+    font-size: 2rem;
+    line-height: 22px;
+    color: rgb(51, 51, 51);
+    margin-bottom: 7rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.icon i {
+    font-size: 1.5rem;
+    color: grey;
+}
+
+#end {
+    position: relative;
+    bottom: 5rem;
+    margin-right: 66.7rem;
+    margin-top: 2rem;
+    font-family: var(--font2);
+    font-size: 0.76rem;
+    color: #333;
+    text-align: center;
+    width: 100%;
+}
+
+    @media (max-width: 998px) {
+        html {
+            font-size: 55%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        html {
+            font-size: 45%;
+        }
+    }
+
+    @media (max-width: 695px) {
+        #item1 {
+            grid-area: item1;
+        }
+
+        #item2 {
+            grid-area: item2;
+        }
+
+        #item3 {
+            grid-area: item3;
+        }
+
+        #item4 {
+            grid-area: item4;
+        }
+
+        #item5 {
+            grid-area: item5;
+        }
+        
+
+        .grid1 {
+            display: grid;
+            grid-template-areas: 
+            "item1"
+            "item2"
+            "item3"
+            "item4"
+            "item5";
+            ;
+
+            margin-top: 2rem;
+        margin-bottom: 15rem;
+        gap: 2rem;
+        }
+
+        .item1, .items {
+            width: auto;
+            height: auto;
+        }
+    }
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <!--------------------------------------------------------- nav bar ------------------------------------------------------------->
+        <div class="nav">
+            <span class="logo">designstripe</span>
+            <div class="nav_tags">
+                <div class="price">
+                    <a href="#" class="nav_tag">Pricing</a>
+                </div>
+                    <div class="inspiration">
+                        <a href="#" class="nav_tag">Inspiration</a>
+                    </div>
+                        <div class="tools">
+                            <a href="#" class="nav_tag">Tools</a>
+                        </div>
+            </div>
+            <div class="go-to-app">GO TO APP</div>
+        </div>
+
+        <!----------------------------------------------------------- New Blogs ---------------------------------------------------------->
+        <div class="grid1">
+            <!-- item1 -->
+            <div class="item1" id="item1">
+                <img src="66c8c9d190354ec95550361a_marketers - how to stay organized.jpg" alt="" class="banner_head">
+                <div class="info">
+                    <img src="user.png" alt="" class="pic">
+                    <div class="nnd1">
+                        <p class="Name">Jenn Pereira</p>
+                    <p class="date">23 August, 2024</p>
+                    </div>
+                </div>
+                <div class="headline1">How to Stay Organized: 8 Tips for
+                    Marketers Managing Multiple
+                    Campaigns</div>
+                <div class="desc">Struggling to stay organized while managing multiple marketing campaigns? Discover
+                    strategies to boost efficiency and keep your campaigns on track.
+                </div>
+                
+                <div class="catgs">
+                    <p class="catg">Productivity</p>
+                    <p class="catg">Time Management</p>
+                    <p class="catg">Marketing</p>
+                </div>
+            </div>
+
+            <!------------------------------------------------- all the  other items ---------------------------------------------------->
+            <div class="items">
+                <!-- item2 -->
+                <div class="item2" id="item2">
+                    <img src="66c89bf1265c9ec1c3f7d21b_consistent on-brand social media content for social media managers-p-500.png" alt="" class="banner">
+                    <div class="title">
+                        <div class="headline">Consistent,
+                            Captivating Visuals
+                            Made Easy for Social
+                            Media Managers
+                        </div>
+                        <div class="inf">
+                            <div class="nnd">
+                                <p class="Name">Jenn Pereira</p>
+                            <p class="date">21 August, 2024</p>
+                            </div>
+                        </div>
+                        
+                        <div class="des">Lorem ipsum, dolor sit amet consectetur adipisicing elit...
+                        </div>
+                    </div>
+                </div>
+                <!-- item3 -->
+                <div class="item3" id="item3">
+                    <img src="66c5cfc9ee04dfce7084a531_Scale Content Production 10X.jpg" alt="" class="banner">
+                    <div class="title">
+                        <div class="headline">Agencies: Scale Your
+                            Content Output 1OX,
+                            Without Scaling Your
+                            Team
+                        </div>
+                        <div class="inf">
+                            <div class="nnd">
+                                <p class="Name">Jenn Pereira</p>
+                            <p class="date">19 August, 2024</p>
+                            </div>
+                        </div>
+                        
+                        <div class="des">Lorem ipsum, dolor sit amet consectetur adipisicing elit...
+                        </div>
+                    </div>
+                </div>
+                <!-- item4 -->
+                <div class="item4" id="item4">
+                    <img src="66c5a4a1fc89bf78abfe6bb7_How to Reclaim Your Time and Grow Your Business-p-500.jpg" alt="" class="banner">
+                    <div class="title">
+                        <div class="headline">Small Business
+                            Owners: How to
+                            Reclaim Your Time
+                            and Grow Your
+                            Business
+                        </div>
+                        <div class="inf">
+                           <div class="nnd">
+                            <p class="Name">Jenn Pereira</p>
+                            <p class="date">15 August, 2024</p>
+                           </div>
+                        </div>
+                        
+                        <div class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit...
+                        </div>
+                    </div>
+                </div>
+                <!-- item5 -->
+                <div class="item5" id="item5">
+                    <img src="66bd2f32edb1c104c66088eb_AI marketing automation agency2-p-500.jpg" alt="" class="banner">
+                    <div class="title">
+                        <div class="headline">How to Start an AI
+                            Automation
+                            Marketing Agency
+                        </div>
+                        <div class="inf">
+                            <div class="nnd">
+                                <p class="Name">Jenn Pereira</p>
+                            <p class="date">14 August, 2024</p>
+                            </div>
+                        </div>
+                        <div class="des">Lorem ipsum dolor sit amet consectetur adipisicing elit...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-------------------------------------------------------------- grid2 --------------------------------------------------------->
+        <section class="section2">
+            <h3 class="recent-articles">Recent articles</h3>
+        <div class="grid2">
+            <!-- item1 -->
+            <div class="box1">
+                <img src="66ba81d056301278f4534a23_AI writing tools-p-800.jpg" alt="" class="poster1">
+                <div class="article">
+                    <div class="social">
+                        <div >
+                            <img src="user.png" alt="" class="pic">
+                        </div>
+                        <div class="nnd">
+                            <p class="Name">Jenn Pereira</p>
+                            <p class="date">14 August, 2024</p>
+                        </div>
+                    </div>
+                    <div class="heading">20 AI Writing Tools to Supercharge Your Content
+    Creation</div>
+                    <div class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis labore deleniti nulla atque libero! Voluptas quis porro labore dicta tenetur.
+
+                    </div>
+                </div>
+            </div>
+            <!-- item2 -->
+            <div class="box2">
+                <img src="66ba5f7dbe139d13bc8c339e_Social Media Lead generation-p-800.png" alt="" class="poster2">
+                <div class="article">
+                    <div class="social">
+                        <div class="pic">
+                            <img src="user.png" alt="" class="pic">
+                        </div>
+                        <div class="nnd">
+                            <p class="Name">Jenn Pereira</p>
+                            <p class="date">14 August, 2024</p>
+                        </div>
+                    </div>
+                    <div class="heading">Social Media Lead Generation: 15 Proven TIPS to
+                        Increase Leads</div>
+                    <div class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis eius id porro, itaque cupiditate sit veniam voluptates voluptatum impedit expedita?
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- item3 -->
+            <div class="box3">
+                    <img src="66b63cd99f9f58f20600088c_How to Launch a Product-p-800.jpg" alt="" class="poster3">
+                <div class="article">
+                    <div class="social">
+                        <div class="pic">
+                            <img src="user.png" alt="" class="pic">
+                        </div>
+                        <div class="nnd">
+                            <p class="Name">Jenn Pereira</p>
+                            <p class="date">14 August, 2024</p>
+                        </div>
+                    </div>
+                    <div class="heading">How to Launch a Product: 14 Essential Tips for
+                        Success</div>
+                    <div class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut consectetur atque maxime ex nemo sint.</div>
+                </div>
+            </div>
+            <!-- item4 -->
+            <div class="box4">
+                    <img src="66b23d430a348f116523f624_ai courses for beginners-p-800.jpg" alt="" class="poster4">
+               <div class="article">
+                <div class="social">
+                    <div class="pic">
+                        <img src="user.png" alt="" class="pic">
+                    </div>
+                    <div class="nnd">
+                        <p class="Name">Jenn Pereira</p>
+                        <p class="date">14 August, 2024</p>
+                    </div>
+                </div>
+                <div class="heading">Beginner's Guide to AI: 10 Online Courses to Start
+                    With</div>
+                <div class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae ex, autem optio itaque quo aliquam!
+            </div>
+               </div>
+        </div>
+
+            <!-- item5 -->
+            <div class="box5">
+                <img src="66b0ecf45f05f17cfcb42a40_Drive Website Traffic for Your Small Business-p-800.jpg" alt="" class="poster5">
+
+               <div class="article">
+                <div class="social">
+                    <div class="pic">
+                        <img src="user.png" alt="" class="pic">
+                    </div>
+                    <div class="nnd">
+                        <p class="Name">Jenn Pereira</p>
+                        <p class="date">14 August, 2024</p>
+                    </div>
+                </div>
+                <div class="heading">8 Effective Tips to Drive Website Traffic for Your
+                    Small Business</div>
+                <div class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus temporibus quas, vero placeat error deserunt.</div>
+               </div>
+            </div>
+
+            <!---item6--->
+            <div class="box6">
+                    <img src="66b0e945497c4b4a5b71a458_top AI chatbots-p-800.jpg" alt="" class="poster6">
+                    <div class="article">
+                        <div class="social">
+                            <div class="pic">
+                                <img src="user.png" alt="" class="pic">
+                            </div>
+                            <div class="nnd">
+                                <p class="Name">Jenn Pereira</p>
+                                <p class="date">14 August, 2024</p>
+                            </div>
+                        </div>
+                        <div class="heading">AI Chatbots to Boost Your Marketing in 2024: Top IO</div>
+                        <div class="desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi incidunt sunt veritatis atque reprehenderit earum adipisci.
+
+                        </div>
+                    </div>
+            </div>
+       
+        </section>
+
+        <section class="section3">
+            <h3 id="best">Best of the rest</h3>
+            <div class="grid3">
+                <!-- blog1 -->
+                <div class="blog" id="blog1">
+                    <a href="#"><img src="64b92bf118e86e08f5fc1e12_Visual Branding Header Webflow-p-500.png" alt="" class="cover"></a>
+                    <div class="blog_title">
+                        <div class="head">The Power of Visual Branding: How
+                            Design Can Boost Your Business
+                            Identity</div>
+                        <div id="lane">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam repudiandae beatae dolor, eligendi veritatis facere nobis magni doloremque eum iure.</div>
+                        <div class="writer">
+                            <img src="user.png" alt="">
+                            <div class="jaankari">
+                                <div class="naam">Luke Tyler</div>
+                            <div class="taarikh">July 19 2023</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog 2 -->
+                <div class="blog" id="blog2">
+                    <a href="#"><img src="640a0eb9592f9d39a6541873_Blog Header_15 Places to Get Unique Design Inspiration-p-500.png" alt="" class="cover"></a>
+                    <div class="blog_title">
+                        <div class="head">15 Places to Get unique Design
+                            Inspiration</div>
+                        <div id="lane">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum praesentium velit eaque, obcaecati esse inventore? Aliquam, repellat. Nobis, ea vel.</div>
+                        <div class="writer">
+                            <img src="user.png" alt="">
+                            <div class="jaankari">
+                                <div class="naam">Luke Tyler</div>
+                            <div class="taarikh">July 19 2023</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog 3 -->
+                <div class="blog" id="blog3">
+                    <a href="#"><img src="63f3523c1cd7b9c137142627_Blog Header (6)-p-500.png" alt="" class="cover"></a>
+                    <div class="blog_title">
+                        <div class="head">Five Easy-to—use Tools for Instagram</div>
+                        <div id="lane">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni neque ullam sapiente nihil quos deserunt pariatur dolorem tempora ut provident.</div>
+                        <div class="writer">
+                            <img src="user.png" alt="">
+                            <div class="jaankari">
+                                <div class="naam">Luke Tyler</div>
+                            <div class="taarikh">July 19 2023</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog 4 -->
+                <div class="blog" id="blog4">
+                    <a href="#"><img src="63e26f695ef6040f740aaa22_ArticleTop_01-p-500.png" alt="" class="cover"></a>
+                    <div class="blog_title">
+                        <div class="head">The Benefits of Branding for Internal
+                            Culture</div>
+                        <div id="lane">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam perspiciatis voluptates nihil, voluptatibus ex veritatis nemo voluptate non fuga recusandae.</div>
+                        <div class="writer">
+                            <img src="user.png" alt="">
+                            <div class="jaankari">
+                                <div class="naam">Luke Tyler</div>
+                            <div class="taarikh">July 19 2023</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- blog 5 -->
+                <div class="blog" id="blog5">
+                    <a href="#"><img src="63e62dc62ff6285d4e5dee42_ArticleHero-p-500.png" alt="" class="cover"></a>
+                    <div class="blog_title">
+                        <div class="head">uncovering the Potential of
+                            Serverless Al</div>
+                        <div id="lane">The model's potential for improving the feasibility of
+                            working with Al tools is enourmous, but there's one
+                            pitfall tech managers still need to be aware of.</div>
+                        <div class="writer">
+                            <img src="user.png" alt="">
+                            <div class="jaankari">
+                                <div class="naam">Luke Tyler</div>
+                            <div class="taarikh">July 19 2023</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- blog 6 -->
+                <div class="blog" id="blog6">
+                    <a href="#"><img src="63c82a0e398a55f9b3e564fc_Blog Header_1280x960_ALT-p-500.png" alt="" class="cover"></a>
+                    <div class="blog_title">
+                        <div class="head">The designstripe Time Management
+                            Workshop: Our Process and Learnings</div>
+                        <div id="lane">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus nostrum commodi facere, soluta maiores sunt rem similique dolor voluptas obcaecati!</div>
+                        <div class="writer">
+                            <img src="user.png" alt="">
+                            <div class="jaankari">
+                                <div class="naam">Luke Tyler</div>
+                            <div class="taarikh">July 19 2023</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- blog 7 -->
+                <div class="blog" id="blog7">
+                    <a href="#"><img src="639b3bc7d5a8af3213e80f64_Hero-min-p-500.png" alt="" class="cover"></a>
+                    <div class="blog_title">
+                        <div class="head">Staff Picks: A Gift Guide for Designers
+
+                        </div>
+                        <div id="lane">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus nostrum commodi facere, soluta maiores sunt rem similique dolor voluptas obcaecati!</div>
+                        <div class="writer">
+                            <img src="user.png" alt="">
+                            <div class="jaankari">
+                                <div class="naam">Luke Tyler</div>
+                            <div class="taarikh">July 19 2023</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- blog 8 -->
+                <div class="blog" id="blog8">
+                    <a href="#"><img src="63764b44c1b327701ced683f_Blog Header-p-500.png" alt="" class="cover"></a>
+                    <div class="blog_title">
+                        <div class="head">How to Create Remarkable Promo
+                            Designs for Black Friday, Quickly and
+                            Easily
+                        </div>
+                        <div id="lane">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus nostrum commodi facere, soluta maiores sunt rem similique dolor voluptas obcaecati!</div>
+                        <div class="writer">
+                            <img src="user.png" alt="">
+                            <div class="jaankari">
+                                <div class="naam">Luke Tyler</div>
+                            <div class="taarikh">July 19 2023</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- blog 9 -->
+                <div class="blog" id="blog9">
+                    <a href="#"><img src="6388ede5dc800a613f8b6a52_Blog Header-p-500.png" alt="" class="cover"></a>
+                    <div class="blog_title">
+                        <div class="head">25+ Resources to Find Free Images
+                            for Your Design projects
+                        </div>
+                        <div id="lane">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus nostrum commodi facere, soluta maiores sunt rem similique dolor voluptas obcaecati!</div>
+                        <div class="writer">
+                            <img src="user.png" alt="">
+                            <div class="jaankari">
+                                <div class="naam">Luke Tyler</div>
+                            <div class="taarikh">July 19 2023</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+                <!-- blog 10 -->
+                <div class="blog" id="blog9">
+    <a href="#"><img src="64dce84d242fd23b2be29b76_Cosmos Header-p-1600.png" alt="" class="cover"></a>
+    <div class="blog_title">
+        <div class="head"> The Intricate Interplay of User
+            Experience, Time, and Product—
+            Market Fit
+        </div>
+        <div id="lane">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus nostrum commodi facere, soluta maiores sunt rem similique dolor voluptas obcaecati!</div>
+        <div class="writer">
+            <img src="user.png" alt="">
+            <div class="jaankari">
+                <div class="naam">Luke Tyler</div>
+            <div class="taarikh">July 19 2023</div>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </section>
+
+        <div class="orange_container">
+            <p id="main_line">Get sterted for free</p>
+            <p id="bottom_line">Create fresh, on-brand and beautiful content for all your social media channels in seconds.</p>
+            <button>TRY NOW</button>
+        </div>
+
+        <div class="line_break"></div>
+
+        <footer>
+           <div class="left">
+            <p class="logo2">designstripe</p>
+                <div class="social-icons">
+                    <a href="https://twitter.com/yourprofile" target="_blank" class="icon"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/yourprofile" target="_blank" class="icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://dribbble.com/yourprofile" target="_blank" class="icon"><i class="fab fa-dribbble"></i></a>
+                </div>
+           </div>
+
+            <div class="right">
+                <li class="designstripe">
+                    <p>designstripe</p>
+                    <ul>Pricing</ul>
+                    <ul>Sign up</ul>
+                    <ul>Blog</ul>
+                </li>
+    
+                <li class="Company">
+                    <p>Company</p>
+                    <ul>About us</ul>
+                    <ul>Careers</ul>
+                    <ul>Release Notes</ul>
+                </li>
+    
+                <li class="Support">
+                    <p>Support</p>
+                    <ul>Contact us</ul>
+                    <ul>License</ul>
+                    <ul>Privacy</ul>
+                </li>
+    
+                <li class="Tools">
+                    <p>Tools</p>
+                    <ul>Mock ups</ul>
+                    <ul>Illustration</ul>
+                    <ul>Crayons</ul>
+                    <ul>Post Idea Generator</ul>
+                </li>
+            </div>
+        </footer>
+        <p id="end">&copy; 2023 designstripe. All rights reserved.</p>
+    </div>      
+</body>
+</html>
