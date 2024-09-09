@@ -26,80 +26,307 @@
 <body>
 <!-- 
     <header> -->
-        <nav>
-            <div class="logo">
-                <a href="index.html" >
-                    <i class="fa-duotone fa-solid fa-pen-nib logo-icon"></i>
-                    <span class="logo-text"><p>StudySync</p></span>
-                </a>
-                
-            </div>
-
-                <ul class="nav-bars">
-                    <li class="hideOnMobile" id="bar1">Home</li>
-                    <li class="hideOnMobile" id="bar2">Features</li>
-                    <li class="hideOnMobile"  id="bar3">Blog</li>
-                    <li class="hideOnMobile" id="bar4">Pricing</li>
-                    <li class="hideOnMobile" id="bar5">About</li>    
-                    
-                </ul>
-
-                
-    
-                <div class="contact">
-                    <button>Contact Us</button>
-                    <a href="#" onclick=showSidebar()>
-                        <i class="fa-solid fa-bars nav-icon"></i>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="index.html" >
+                        <i class="fa-duotone fa-solid fa-pen-nib logo-icon"></i>
+                        <span class="logo-text"><p>StudySync</p></span>
                     </a>
+                    
+                </div>
+    
+                    <ul class="nav-bars">
+                        <li class="hideOnMobile" id="bar1">Home</li>
+                        <li class="hideOnMobile" id="bar2">Features</li>
+                        <li class="hideOnMobile"  id="bar3">Blog</li>
+                        <li class="hideOnMobile" id="bar4">Pricing</li>
+                        <li class="hideOnMobile" id="bar5">About</li>    
+                        
+                    </ul>
+    
+                    
+        
+                    <div class="contact">
+                        <button>Contact Us</button>
+                        <a href="#" onclick=showSidebar()>
+                            <i class="fa-solid fa-bars nav-icon"></i>
+                        </a>
+                    </div>
+    
+                    
+    
+                    <script>
+                        function showSidebar() {
+                            const sidebar = document.querySelector('.sidebar')
+                            sidebar.style.display = 'flex'
+                        }
+    
+                        function hideSidebar() {
+                             const sidebar = document.querySelector('.sidebar')
+                            sidebar.style.display = 'none'
+                        }
+                    </script>
+    
+    
+                    <ul class="sidebar">
+                        <i onclick="hideSidebar()" class="fa-solid fa-xmark cross"></i>
+                        <li id="bar1">Home</li>
+                        <li id="bar2">Features</li>
+                        <li id="bar3">Blog</li>
+                        <li id="bar4">Pricing</li>
+                        <li id="bar5">About</li>
+                        <li id="bar6">Contact Us</li>
+    
+                    </ul>
+            </nav>
+        <!-- </header> -->
+        
+        <main>
+            <div class="web-desc">
+                <div class="text-area">
+                    <p class="text-line" id="h1">Very proud to introduce</p>
+                    <p class="text-line" id="h2">Seamless Learning for <span>Brighter Futures</span></p>
+                    <p class="text-line" id="h3">Our innovative platform offers an effortless  learning experience, connecting students, teachers, and parents in a single, intuitive space. Join us on a transformative journey to
+                        simplify education and unlock your full potential.</p>
+    
+                </div>
+    
+                <div class="buttons">
+                    <button class="b1">Start Now</button>
+                    <button class="b2">Take Tour</button>
+                </div>
+            </div>
+    
+            <div class="main-img">
+                <img src="photo_2024-01-25_08-13-28.jpg" alt="main-img">
+            </div>
+        </main>
+
+
+        <section>
+            <p class="headline">Trusted By The Best</p>
+            <div class="company-container">
+                <div class="company">
+                    <i class="fa-brands fa-google "></i>
+                    <p>Google</p>
+                </div>
+                <div class="company">
+                    <i class="fa-brands fa-microsoft"></i>
+                    <p>Microsoft</p>
+                </div>
+                <div class="company">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <p>Linkedin</p>
+                </div>
+                <div class="company">
+                    <i class="fa-brands fa-meta"></i>
+                    <p>Meta</p>
+                </div>
+            </div>
+        </section>
+        </div>
+
+
+        <!------------------------------------------------------- Feature Area ---------------------------------------------------------->
+        <section class="feature-container">
+           <div class="title">
+            <p id="title-heading">Our Competetive Advantage</p>
+            <p id="title-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut id fuga quo. Veritatis assumenda earum porro saepe nihil ratione officia.</p>
+           </div>
+           <div class="cards-section">
+            <div class="card" id="card1">
+                <i class="fa-solid fa-lightbulb card-icon"></i>
+                <p class="card-heading">Personalised Learning</p>
+                <p class="card-desc"> 
+                    Offer tailored learning experiences through Ai and machine learning to individual student needs.
+                </p>
+            </div>
+            <div class="card" id="card2">
+                <i class="fa-solid fa-money-bill card-icon"></i>
+                <p class="card-heading">Affordability</p>
+                <p class="card-desc"> 
+                    Provide high-quality education at an
+affordable price point. making it accessible
+to a broader audience.
+                </p>
+            </div>
+            <div class="card" id="card3">
+                <i class="fa-solid fa-handshake card-icon"></i>
+                <p class="card-heading">Industry Partnerships</p>
+                <p class="card-desc"> 
+                    Collaborate with well-known companies and
+institutions to offer accredited courses and
+certifications, adding credibility to your
+offerings.
+                </p>
+            </div>
+            <div class="card" id="card4">
+                <i class="fa-solid fa-computer card-icon"></i>
+                <p class="card-heading">Inovative Technology</p>
+                <p class="card-desc"> 
+                    Utilize cutting-edge technology, such as
+augmented reality or virtual reality, to create
+immersive leaming experiences.
+                </p>
+            </div>
+            <div class="card" id="card5">
+                <i class="fa-solid fa-phone card-icon"></i>
+                <p class="card-heading">Responsive Support</p>
+                <p class="card-desc"> 
+                    Provide exceptional customer support and
+assistance to students and educators.
+                </p>
+            </div>
+            
+            <div class="card" id="card6">
+                <i class="fa-solid fa-chart-line card-icon"></i>
+                <p class="card-heading">Analytics and Insights</p>
+                <p class="card-desc"> 
+                    Offer detailed progress tracking and
+                    analytics to help students and teachers
+                    monitor performance and make data-driven
+                    decisions.
+                </p>
+            </div>
+           </div>
+        </section>
+
+
+        <div class="testimaonial-section">
+            <p class="title">What Others Say About Us</p>
+            <div class="test-cards">
+                <div class="ts" id="ts1">
+                    <p class="review">"StuaySync revolutionized my classroom' Engaging
+                        content and teacher resources make learning
+                        enjoyable. Highly recommended for educators."</p>
+                        <div class="img">
+                            <img src="jurica-koletic-7YVZYZeITc8-unsplash.jpg" alt="">
+                        </div>
+    
+                        <div class="id">
+                            <p class="name">Dr. James Carter</p>
+                            <p class="post">Professor</p>
+                        </div>
                 </div>
 
-                
-
-                <script>
-                    function showSidebar() {
-                        const sidebar = document.querySelector('.sidebar')
-                        sidebar.style.display = 'flex'
-                    }
-
-                    function hideSidebar() {
-                         const sidebar = document.querySelector('.sidebar')
-                        sidebar.style.display = 'none'
-                    }
-                </script>
-
-
-                <ul class="sidebar">
-                    <i onclick="hideSidebar()" class="fa-solid fa-xmark cross"></i>
-                    <li id="bar1">Home</li>
-                    <li id="bar2">Features</li>
-                    <li id="bar3">Blog</li>
-                    <li id="bar4">Pricing</li>
-                    <li id="bar5">About</li>
-                    <li id="bar6">Contact Us</li>
-
-                </ul>
-        </nav>
-    <!-- </header> -->
+                <!-- Testimonial 3 -->
+                <div class="ts" id="ts3">
+                    <p class="review">"StudySync, a true gamo-changer Flexible content.
+                        tailored assessments, and excellent support, Integral
+                        to our school district's success.</p>
+                        <div class="img">
+                            <img src="michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt="" >
+                        </div>
     
-    <main>
-        <div class="web-desc">
-            <div class="text-area">
-                <p class="text-line" id="h1">Very proud to introduce</p>
-                <p class="text-line" id="h2">Seamless Learning for Brighter Futures</p>
-                <p class="text-line" id="h3">Our innovative platform offers an effortless  learning experience, connecting students, teachers, and parents in a single, intuitive space. Join us on a transformative journey to
-                    simplify education and unlock your full potential.</p>
+                        <div class="id">
+                            <p class="name">Sarah Johnson</p>
+                            <p class="post">School Teacher</p>
+                        </div>
+                            
+                        </div>
 
+                        
+                <div class="ts" id="ts2">
+                    <p class="review">"StudySync transformed our family's learning journey.
+                        Safe, interactive, and progress tracking features are
+                        invaluable for parents,"</p>
+                        <div class="img">
+                            <img src="cesar-rincon-XHVpWcr5grQ-unsplash.jpg" alt="">
+                        </div>
+                        <div class="id">
+                            <p class="name">Mark Davis</p>
+                            <p class="post">Parent</p>
+                        </div>
+                            
+                        </div>
+    
+                        
+            </div>
             </div>
 
-            <div class="buttons">
-                <button class="b1">Start Now</button>
-                <button class="b2">Take Tour</button>
+            
             </div>
-        </div>
+            
 
-        <div class="main-img">
-            <img src="photo_2024-01-25_08-28-37.jpg" alt="main-img">
+            <div class="newsletter-container">
+                <div class="newsletter">
+                    <div class="main-img">
+                        <img src="photo_2024-09-09_22-37-53.jpg"">
+                    </div>
+                    <div class="input-box">
+                        <p id="l1">Get the latest updates</p>
+                        <p id="l2">Sign up for our newsletter</p>
+                        <div class="email">
+                            <input type="email" name="Email" id="email-box" placeholder="Email">
+                            <button>Send</button>
+                        </div>
+                        <p id="l3">By signing up to our newsletter you agree to our <span><a href="#">Terms of Service</a></span> and <span><a href="#">Privacy Policy</a></span>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="footer-container">
+                <div class="footer">
+                    <div class="upside">
+                        <div class="left">
+                           <div class="logo">
+                            <a href="index.html" >
+                                <i class="fa-duotone fa-solid fa-pen-nib logo-icon"></i>
+                                <span class="logo-text"><p>StudySync</p></span>
+                            </a>
+                           </div>
+                            <p id="desc">Seamless Learning
+                                for Brighter Futures</p>
+
+                            <div class="social-icons">
+                                <i class="fa-brands fa-instagram social-icon" ></i>
+                                <i class="fa-brands fa-twitter social-icon"></i>
+                                <i class="fa-brands fa-linkedin social-icon"></i>
+                                <i class="fa-brands fa-github social-icon"></i>
+                            </div>
+                        </div>
+
+                        <div class="right">
+                            <div class="sec1">
+                                <p id="head">Products</p>
+                               <a href="" class="link">Overview</a>
+                               <a href="" class="link">Solution</a><a href="" class="link">Pricing</a>
+                               <a href="" class="link">Customers</a>
+                            </div>
+                            <div class="sec2">
+                                <p id="head">Company</p>
+                                <a href="" class="link">About</a>
+                                <a href="" class="link">Investor Relation</a>
+                               <a href="" class="link">Jobs</a>
+                                <a href="" class="link">Press</a>
+                                <a href="" class="link">Blog</a>
+                            </div>
+                            <div class="sec3">
+                                <p id="head">Support</p>
+                                <a href="" class="link">Contact</a>
+                                <a href="" class="link">Documentation</a>
+                                <a href="" class="link">Chat</a>
+                                <a href="" class="link">FAQ</a>
+                                
+                            </div>
+                            <div class="sec4">
+                                <p id="head">Legal</p>
+                                <a href="" class="link">Terms of Service</a>
+                                <a href="" class="link">rivacy Policy</a>
+                               <a href="" class="link">Cookie Settings</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <hr class="line">
+
+                    <div class="downside">
+                        <p>&copy; 2021 Present StudySync. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </footer>
         </div>
-    </main>
 </body>
 </html>
